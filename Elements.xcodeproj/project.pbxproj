@@ -11,6 +11,7 @@
 		3F62FA8625E958DE00812691 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FA8525E958DE00812691 /* ContentView.swift */; };
 		3F62FA8825E958E500812691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F62FA8725E958E500812691 /* Assets.xcassets */; };
 		3F62FA8B25E958E500812691 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F62FA8A25E958E500812691 /* Preview Assets.xcassets */; };
+		3F62FA9425E95D5B00812691 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F62FA9325E95D5A00812691 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		3F62FA8725E958E500812691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F62FA8A25E958E500812691 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F62FA8C25E958E500812691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F62FA9325E95D5A00812691 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				3F62FA8325E958DE00812691 /* ElementsApp.swift */,
 				3F62FA8525E958DE00812691 /* ContentView.swift */,
 				3F62FA8725E958E500812691 /* Assets.xcassets */,
+				3F62FA9325E95D5A00812691 /* SwiftyJSON.swift */,
 				3F62FA8C25E958E500812691 /* Info.plist */,
 				3F62FA8925E958E500812691 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F62FA9425E95D5B00812691 /* SwiftyJSON.swift in Sources */,
 				3F62FA8625E958DE00812691 /* ContentView.swift in Sources */,
 				3F62FA8425E958DE00812691 /* ElementsApp.swift in Sources */,
 			);
