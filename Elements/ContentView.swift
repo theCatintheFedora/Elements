@@ -15,10 +15,21 @@ struct ContentView: View {
         NavigationView {
             List(elements) { element in
                 NavigationLink(
-                    destination: Text(element.facts)
-                        .padding(),
-                    label: {
+                    destination: VStack {
                         Text(element.name)
+                            .padding()
+                        Text(element.symbol)
+                            .padding()
+                        Text(element.history)
+                            .padding()
+                        Text(element.facts)
+                            .padding()
+                    },
+                    label: {
+                        HStack {
+                            Text(element.symbol)
+                            Text(element.name)
+                        }
                     })
             }
             .navigationTitle("Elements information")
@@ -32,22 +43,24 @@ struct ContentView: View {
             })
         }
     }
+    
     func getElements() {
-        let apiKey = "?rapidapi-key=ba1b549956msha6fa1902ee76913p1104c9jsncc2a41204a3d"
+        let apiKey = "ba1b549956msha6fa1902ee76913p1104c9jsncc2a41204a3d"
         let query = "https://periodictable.p.rapidapi.com/?rapidapi-key=\(apiKey)"
         if let url = URL(string: query) {
             if let data = try? Data(contentsOf: url) {
                 let json = try! JSON(data: data)
-                if json["success"] == true {
-                    let contents = json["body"].arrayValue
-                    for item in contents {
-                        let name = item["name"].stringValue
-                        let facts = item["facts"].stringValue
-                        let element = Element(name: name, facts: facts)
-                        elements.append(element)
-                    }
-                    return
+                let contents = json.arrayValue
+                for item in contents {
+                    let name = item["name"].stringValue
+                    let symbol = item["symbol"].stringValue
+                    let facts = item["facts"].stringValue
+                    let history = item["history"].stringValue
+                    let element = Element(symbol: symbol, name: name, history:
+                                            history, facts: facts)
+                    elements.append(element)
                 }
+                return
             }
         }
         showingAlert = true
@@ -56,8 +69,10 @@ struct ContentView: View {
 
 struct Element: Identifiable {
     let id = UUID()
-    var name: String
-    var facts: String
+    let symbol: String
+    let name: String
+    let history: String
+    let facts: String
 }
 
 struct ContentView_Previews: PreviewProvider {
